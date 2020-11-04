@@ -627,14 +627,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
-      propertyPath: GenerationIntensity
-      value: 6
+      propertyPath: DistanceBetweenObjects
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
-      propertyPath: DangerBlockPrefab
-      value: 
-      objectReference: {fileID: 2325534928894000241, guid: ce3d338fe8a67da40a2cc0a1284e0eb4,
+      propertyPath: ObjectsCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
+      propertyPath: SecondsSpawnFrequency
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
+        type: 3}
+      propertyPath: GenerationProbability
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d0d235e932eeb43bbad578f5738953, type: 3}

@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7224263206300362911}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.25, y: 0.63, z: 2.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -105,8 +105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32ff401c4bea50489dddf049e0458c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DangerBlockPrefab: {fileID: 381499612262079942, guid: d3d1b8a7b6dc16445bd0b47f967a4acc,
+  DangerObjectPrefab: {fileID: 2325534928894000241, guid: ce3d338fe8a67da40a2cc0a1284e0eb4,
     type: 3}
   Generate: 1
-  GenerateDistanceByZ: 26
-  GenerationIntensity: 3
+  ObjectsCount: 30
+  DistanceBetweenObjects: 0
+  SecondsSpawnFrequency: 2
+  GenerationProbability: 100

@@ -4,38 +4,45 @@ using UnityEngine;
 
 public class DangerBlocksGeneration : MonoBehaviour
 {
-    public GameObject DangerBlockPrefab;
+    public GameObject DangerObjectPrefab;
 
     public bool Generate = true;
 
-    public float GenerateDistanceByZ = 30;
+    public float ObjectsCount = 20;
 
-    public int GenerationIntensity = 50;
+    public float DistanceBetweenObjects = 0;
+
+    public float SecondsSpawnFrequency = 2;
+
+    public int GenerationProbability = 3;
+
+    public
     // Start is called before the first frame update
     void Start()
     {
+        InvokeRepeating("SpawnBlocks", 0, SecondsSpawnFrequency);
     }
 
     // Update is called once per frame
-    void Update()
+    void SpawnBlocks()
     {
-        if (DangerBlockPrefab == null)
+        if (DangerObjectPrefab == null)
         {
             throw new System.Exception("DangerBlockPrefab link not found!");
         }
 
-        if (Generate && Time.frameCount % 60 == 0)
-        {
-            for (float i = 0; i < GenerateDistanceByZ; i++)
-            {
-                if (Random.Range(1, 100) <= GenerationIntensity)
-                {
-                    float distanceX = transform.position.x;
-                    float distanceY = transform.position.y;
-                    float distanceZ = transform.position.z + i;
+        //Colider size calculate from center, so this is half of objets size and i multiply it
+        float zSizeOfObjest = DangerObjectPrefab.GetComponent<BoxCollider>().size.z * 2;
 
-                    Instantiate(DangerBlockPrefab, new Vector3(distanceX, distanceY, distanceZ), DangerBlockPrefab.transform.rotation);
-                }
+        for (float i = 0; i < ObjectsCount; i++)
+        {
+            if (Random.Range(1, 100) <= GenerationProbability)
+            {
+                float positionX = transform.position.x;
+                float positionY = transform.position.y;
+                float positionZ = transform.position.z + zSizeOfObjest * i + DistanceBetweenObjects * i;
+
+                Instantiate(DangerObjectPrefab, new Vector3(positionX, positionY, positionZ), DangerObjectPrefab.transform.rotation);
             }
         }
     }
