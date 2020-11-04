@@ -24,15 +24,18 @@ public class DangerBlocksGeneration : MonoBehaviour
             throw new System.Exception("DangerBlockPrefab link not found!");
         }
 
-        if (Generate)
+        if (Generate && Time.frameCount % 60 == 0)
         {
-            if (Random.Range(1, 100) <= GenerationIntensity)
+            for (float i = 0; i < GenerateDistanceByZ; i++)
             {
-                float distanceX = transform.position.x;
-                float distanceY = transform.position.y;
-                float distanceZ = (float)(int)transform.position.z + Random.Range(0, GenerateDistanceByZ);
+                if (Random.Range(1, 100) <= GenerationIntensity)
+                {
+                    float distanceX = transform.position.x;
+                    float distanceY = transform.position.y;
+                    float distanceZ = transform.position.z + i;
 
-                Instantiate(DangerBlockPrefab, new Vector3(distanceX, distanceY, distanceZ), Quaternion.identity);
+                    Instantiate(DangerBlockPrefab, new Vector3(distanceX, distanceY, distanceZ), DangerBlockPrefab.transform.rotation);
+                }
             }
         }
     }
