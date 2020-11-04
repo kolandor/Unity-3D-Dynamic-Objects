@@ -34,18 +34,12 @@ public class MoveBlock : MonoBehaviour
     {
         if (_targetPosition != null && Move)
         {
-            MoveObjectToTarget();
+            MoveForward();
         }
     }
 
-    float MoveObjectToTarget()
+    void MoveForward()
     {
-        Vector3 positionFrom = transform.position;
-        Vector3 positionTo = _targetPosition.position;
-        float currentSpeed = Time.deltaTime * Speed;
-        transform.position = Vector3.MoveTowards(
-            positionFrom, positionTo, currentSpeed);
-
-        return Vector3.Distance(positionFrom, positionTo);
+        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
     }
 }
