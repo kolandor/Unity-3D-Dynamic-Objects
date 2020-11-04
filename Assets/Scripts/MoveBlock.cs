@@ -6,8 +6,6 @@ public class MoveBlock : MonoBehaviour
 {
     public bool Move = true;
 
-    private Transform _targetPosition;
-
     public float Speed = 1;
 
     public bool SelfDestroyByTime = true;
@@ -17,12 +15,6 @@ public class MoveBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(transform.childCount == 0)
-        {
-            throw new System.Exception("No target child in DangerBlock!");
-        }
-        _targetPosition = transform.GetChild(0).transform;
-
         if(SelfDestroyByTime)
         {
             Destroy(gameObject, SelfDestroyTime);
@@ -32,7 +24,7 @@ public class MoveBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_targetPosition != null && Move)
+        if (Move)
         {
             MoveForward();
         }
