@@ -36,6 +36,7 @@ public class EnemyObjectDestroyer : MonoBehaviour
             if(move != null)
             {
                 move.MoveByKey = move.Move = false;
+                Invoke("StopEnemyCar", 0.5f);
             }
 
             if (SelfDestroyObjectByGoalTrget)
@@ -46,6 +47,10 @@ public class EnemyObjectDestroyer : MonoBehaviour
         }
     }
 
+    void StopEnemyCar()
+    {
+        gameObject.GetComponent<MoveBlock>().Move = false;
+    }
     void ChangeScene()
     {
         SceneManager.LoadScene("GameOver");
