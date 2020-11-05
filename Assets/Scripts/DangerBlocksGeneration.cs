@@ -16,7 +16,6 @@ public class DangerBlocksGeneration : MonoBehaviour
 
     public int GenerationProbability = 3;
 
-    public
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +23,7 @@ public class DangerBlocksGeneration : MonoBehaviour
     }
 
     // Update is called once per frame
-    void SpawnBlocks()
+    private void SpawnBlocks()
     {
         if (DangerObjectPrefab == null)
         {

@@ -8,7 +8,7 @@ public class EnemyObjectDestroyer : MonoBehaviour
     public string TargetObjectName;
     private GameObject _targetObject;
 
-    public bool TargetDestroyObjectByGoalTrget = true;
+    public bool DestroyTargetObjectByGoalTrget = true;
 
     public bool SelfDestroyObjectByGoalTrget = false;
 
@@ -16,7 +16,7 @@ public class EnemyObjectDestroyer : MonoBehaviour
 
     public float DestroyTimeByGoalTrget = 0f;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (!string.IsNullOrEmpty(TargetObjectName))
         {
@@ -25,15 +25,21 @@ public class EnemyObjectDestroyer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (_targetObject != null &&
-            Vector3.Distance(transform.position, _targetObject.transform.position) <= DestroyDistanceFromTarget)
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (DestroyTargetObjectByGoalTrget 
+            && _targetObject != null
+            && other.gameObject.name == TargetObjectName)
         {
             Destroy(_targetObject, DestroyTimeByGoalTrget);
 
             MoveObject move = _targetObject.GetComponent<MoveObject>();
-            if(move != null)
+            if (move != null)
             {
                 move.MoveByKey = move.Move = false;
                 Invoke("StopEnemyCar", 0.5f);
@@ -47,11 +53,11 @@ public class EnemyObjectDestroyer : MonoBehaviour
         }
     }
 
-    void StopEnemyCar()
+    private void StopEnemyCar()
     {
         gameObject.GetComponent<MoveBlock>().Move = false;
     }
-    void ChangeScene()
+    private void ChangeScene()
     {
         SceneManager.LoadScene("GameOver");
     }

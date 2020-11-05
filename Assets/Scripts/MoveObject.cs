@@ -23,13 +23,13 @@ public class MoveObject : MonoBehaviour
     public float SelfDeleteTimeByGoalTrget = 0f;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
 
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (TargetPosition != null)
         {
@@ -46,12 +46,12 @@ public class MoveObject : MonoBehaviour
         }
     }
 
-    void ExpandToTarget()
+    private void ExpandToTarget()
     {
         transform.LookAt(TargetPosition);
     }
 
-    float MoveObjectToTarget()
+    private float MoveObjectToTarget()
     {
         Vector3 positionFrom = transform.position;
         Vector3 positionTo = TargetPosition.position;
