@@ -32,12 +32,22 @@ public class EnemyObjectDestroyer : MonoBehaviour
         {
             Destroy(_targetObject, DestroyTimeByGoalTrget);
 
+            MoveObject move = _targetObject.GetComponent<MoveObject>();
+            if(move != null)
+            {
+                move.MoveByKey = move.Move = false;
+            }
+
             if (SelfDestroyObjectByGoalTrget)
             {
                 Destroy(gameObject, DestroyTimeByGoalTrget);
             }
-
-            SceneManager.LoadScene("GameOver");
+            Invoke("ChangeScene", DestroyTimeByGoalTrget);
         }
+    }
+
+    void ChangeScene()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

@@ -10,7 +10,9 @@ public class MoveObject : MonoBehaviour
 
     public bool Move = false;
 
-    public bool MoveByKeySpace = true;
+    public bool MoveByKey = false;
+
+    public KeyCode MoveKey = KeyCode.Space;
 
     public float Speed = 1;
 
@@ -31,7 +33,7 @@ public class MoveObject : MonoBehaviour
     {
         if (TargetPosition != null)
         {
-            if (Move ^ (MoveByKeySpace && Input.GetKey(KeyCode.Space)))
+            if (Move ^ (MoveByKey && Input.GetKey(MoveKey)))
             {
                 ExpandToTarget();
 

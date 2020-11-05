@@ -8,11 +8,11 @@ public class DangerBlocksGeneration : MonoBehaviour
 
     public bool Generate = true;
 
-    public float ObjectsCount = 20;
+    public float ObjectsCount = 20f;
 
-    public float DistanceBetweenObjects = 0;
+    public float DistanceBetweenObjects = 0f;
 
-    public float SecondsSpawnFrequency = 2;
+    public float SecondsSpawnFrequency = 2f;
 
     public int GenerationProbability = 3;
 
