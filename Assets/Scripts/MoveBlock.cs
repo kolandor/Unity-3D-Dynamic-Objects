@@ -12,6 +12,10 @@ public class MoveBlock : MonoBehaviour
 
     public int SelfDestroyTime = 20;
 
+    public bool UseForceForward = false;
+
+    public float AccelerationFactor = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,15 @@ public class MoveBlock : MonoBehaviour
 
     void MoveForward()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+        //Add force to rigidBody (Requires improvement)
+        //https://answers.unity.com/questions/769441/how-do-i-make-a-gameobject-accelerate.html
+        if (UseForceForward)
+        {
+            GetComponent<Rigidbody>().AddForce(transform.forward);
+        }
+        else//Static object movement
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+        }
     }
 }
