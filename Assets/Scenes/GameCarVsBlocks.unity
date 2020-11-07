@@ -650,5 +650,15 @@ PrefabInstance:
       propertyPath: GenerationProbability
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
+        type: 3}
+      propertyPath: Generate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d0d235e932eeb43bbad578f5738953, type: 3}

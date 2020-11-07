@@ -2,24 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moving block object control
+/// </summary>
 public class MoveBlock : MonoBehaviour
 {
+    /// <summary>
+    /// Should the object move
+    /// </summary>
     public bool Move = true;
 
+    /// <summary>
+    /// Position of the target to the cortex the object is moving
+    /// </summary>
     public float Speed = 1;
 
+    /// <summary>
+    /// Object movement speed
+    /// </summary>
     public bool SelfDestroyByTime = true;
 
+    /// <summary>
+    /// Time after which the object will self-destruct
+    /// </summary>
     public int SelfDestroyTime = 20;
 
+    /// <summary>
+    /// Use object rigidbody acceleration
+    /// </summary>
     public bool UseForceForward = false;
 
+    /// <summary>
+    /// Acceleration moment
+    /// </summary>
     public float AccelerationFactor = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(SelfDestroyByTime)
+        //self-destruct launch
+        if (SelfDestroyByTime)
         {
             Destroy(gameObject, SelfDestroyTime);
         }
@@ -29,7 +51,7 @@ public class MoveBlock : MonoBehaviour
     void Update()
     {
         if (Move)
-        {
+        {//If there is a goal, we move the object towards it
             MoveForward();
         }
     }
@@ -40,7 +62,7 @@ public class MoveBlock : MonoBehaviour
         //https://answers.unity.com/questions/769441/how-do-i-make-a-gameobject-accelerate.html
         if (UseForceForward)
         {
-            GetComponent<Rigidbody>().AddForce(transform.forward);
+            GetComponent<Rigidbody>().AddForce(transform.forward * (Speed * AccelerationFactor));
         }
         else//Static object movement
         {

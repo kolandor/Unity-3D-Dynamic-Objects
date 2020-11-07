@@ -56,10 +56,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetObjectName: Car
+  DetectGoalTrget: 1
   DestroyTargetObjectByGoalTrget: 1
   SelfDestroyObjectByGoalTrget: 0
-  DestroyDistanceFromTarget: 1.3
   DestroyTimeByGoalTrget: 1
+  GoToGameOverByGoalTrget: 1
+  SimulationOfAnCarAccident: 1
 --- !u!114 &7799875513320400779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +78,8 @@ MonoBehaviour:
   Speed: 8
   SelfDestroyByTime: 1
   SelfDestroyTime: 8
+  UseForceForward: 0
+  AccelerationFactor: 1
 --- !u!1001 &6008954896470123896
 PrefabInstance:
   m_ObjectHideFlags: 0
