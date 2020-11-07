@@ -553,9 +553,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513483801980202377, guid: 27b9032052ae7b0478fbeb7f8fa6e270,
         type: 3}
-      propertyPath: TargetPosition
-      value: 
-      objectReference: {fileID: 66439195}
+      propertyPath: Move
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b9032052ae7b0478fbeb7f8fa6e270, type: 3}
 --- !u!1001 &7224263206891951754
@@ -633,7 +633,7 @@ PrefabInstance:
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
       propertyPath: DistanceBetweenObjects
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
@@ -648,7 +648,7 @@ PrefabInstance:
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
       propertyPath: GenerationProbability
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
@@ -658,7 +658,7 @@ PrefabInstance:
     - target: {fileID: -858177287269077622, guid: 76d0d235e932eeb43bbad578f5738953,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d0d235e932eeb43bbad578f5738953, type: 3}
